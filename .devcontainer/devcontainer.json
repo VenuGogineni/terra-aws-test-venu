@@ -1,0 +1,20 @@
+{
+    "name": "AWS Development Environment",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9",
+    "extensions": [
+      "ms-awstools.aws-toolkit-vscode",
+      "ms-python.python"
+    ],
+    "settings": {
+      "python.pythonPath": "/usr/local/bin/python"
+    },
+    "postCreateCommand": [
+      "pip install awscli",
+      "aws --version"
+    ],
+    "mounts": [
+      "source=${localWorkspaceFolder}/.aws,target=/home/codespace/.aws,type=bind,consistency=cached"
+    ]
+  }
+  
+
